@@ -89,7 +89,11 @@ namespace ProjectPP
             }
         }
 
-        private void Category_Click(object sender, EventArgs e) { }
+        private void Category_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem clickedItem = sender as ToolStripMenuItem;
+            MessageBox.Show("Category clicked: " + clickedItem.Text);
+        }
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
@@ -116,28 +120,27 @@ namespace ProjectPP
 
         private void adminLoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenLoginForm("Admin");
         }
 
         private void salesmanLoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenLoginForm("Salesman");
         }
 
         private void dealerLoginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenLoginForm("Dealer");
         }
 
         private void OpenLoginForm(string role)
         {
-            MessageBox.Show(role + " login selected. Opening login page.");
-
-            // This calls the basic Form1 without passing any information.
-            // This will work with your existing Form1 and cause no errors.
+            // The message box has been removed.
             Form1 loginForm = new Form1();
             loginForm.Show();
             this.Hide();
+        }
+
+        private void loginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
